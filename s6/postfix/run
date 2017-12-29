@@ -79,6 +79,12 @@ if [[ ${HEADER_CHECKS} == "true" ]]; then
   postconf -e smtp_header_checks="regexp:/etc/postfix/header_checks"
 fi
 
+if [ -n "${POSTMASTER_ADDRESS}" ]; then
+  echo "postfix >> setting postmaster email address"
+  echo "postmaster: $POSTMASTER_ADDRESS" > /etc/aliases
+  newaliases
+fi
+
 if [ -n "${BOUNCE_ADDRESS}" ]; then
   echo "postfix >> Setting bounce address to $BOUNCE_ADDRESS"
   postconf -e notify_classes="resource, software, bounce"

@@ -20,6 +20,7 @@ General Postfix:
 - `INET_PROTOCOLS` - IP protocols, eg `ipv4` or `ipv6`. Default `all`
 - `BOUNCE_ADDRESS` - Email address to receive delivery failure notifications. Default is to log the delivery failure.
 - `NOTIFY_CLASSES` - Override default classes of problem to notify on.
+- `POSTMASTER_ADDRESS` - Forward emails to postmaster on to the supplied email address
 - `HEADER_CHECKS` - If "true" activates a set of pre-configured header_checks.
 
 TLS parameters:
