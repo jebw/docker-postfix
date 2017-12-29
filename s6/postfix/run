@@ -81,7 +81,7 @@ fi
 
 if [ -n "${BOUNCE_ADDRESS}" ]; then
   echo "postfix >> Setting bounce address to $BOUNCE_ADDRESS"
-  postconf -e notify_classes="bounce"
+  postconf -e notify_classes="resource, software, bounce"
   postconf -e bounce_notice_recipient="$BOUNCE_ADDRESS"
 fi
 
