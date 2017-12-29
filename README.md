@@ -19,6 +19,7 @@ General Postfix:
 - `POSTFIX_ADD_MISSING_HEADERS` - add missing headers. Default `no`
 - `INET_PROTOCOLS` - IP protocols, eg `ipv4` or `ipv6`. Default `all`
 - `BOUNCE_ADDRESS` - Email address to receive delivery failure notifications. Default is to log the delivery failure.
+- `NOTIFY_CLASSES` - Override default classes of problem to notify on.
 - `HEADER_CHECKS` - If "true" activates a set of pre-configured header_checks.
 
 TLS parameters:

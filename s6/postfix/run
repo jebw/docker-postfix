@@ -85,6 +85,11 @@ if [ -n "${BOUNCE_ADDRESS}" ]; then
   postconf -e bounce_notice_recipient="$BOUNCE_ADDRESS"
 fi
 
+if [ -n "${NOTIFY_CLASSES}" ]; then
+  echo "postfix >> Setting notify classes to $NOTIFY_CLASSES"
+  postconf -e notify_classes="$NOTIFY_CLASSES"
+fi
+
 # exit cleanly
 trap "{ /usr/sbin/service postfix stop; }" EXIT
 
